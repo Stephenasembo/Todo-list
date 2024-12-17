@@ -1,4 +1,4 @@
-const projectManager = function(todo){
+const projectManager = (function(todo){
     function createNewProject(){
         const project = [];
         return project;
@@ -22,6 +22,6 @@ const projectManager = function(todo){
         addTodo,
         removeTodo,
     }
-}
+})()
 
 export { projectManager };
