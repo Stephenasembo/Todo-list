@@ -1,2 +1,2 @@
-import todoClass from './create-todo.js';
+import todoManager from './create-todo.js';
 import { projectManager } from './project-manager.js';
