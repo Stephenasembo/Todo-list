@@ -1,4 +1,4 @@
-export default todoManager = (function(){
+export default (function(){
     function createNewTodo(title, description, dueDate, priority, notes, status){
         return {
             title,
