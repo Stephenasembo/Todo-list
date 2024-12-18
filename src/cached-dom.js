@@ -15,6 +15,7 @@ const priorityInput = document.querySelector('#priority');
 const notesInput = document.querySelector('#notes');
 const statusInput = document.querySelector('#status');
 
+const projectsDiv = document.querySelector('.projects');
 
 export const domNodes = {
     newProjectBtn,
@@ -38,4 +39,8 @@ export const projectFormControls = {
     projectNameInput,
     projectCancelBtn,
     projectConfirmBtn,
+}
+
+export const displayNodes = {
+    projectsDiv,
 }
