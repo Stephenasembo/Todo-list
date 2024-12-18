@@ -6,9 +6,16 @@
     <title>Todo List</title>
 </head>
 <body>
-    <div>
-        <button id="newProject">Create New Project</button>
-        <button id="newTodo">Create New Todo</button>
+    <div id="container">
+        <div class="sidebar">
+            <div class="addEntries">
+                <button id="newProject">Create New Project</button>
+                <button id="newTodo">Create New Todo</button>    
+            </div>
+        </div>
+
+        <div class="projects">
+        </div>
         <dialog id="todoDialog">
             <form method="dialog">
                 <p>

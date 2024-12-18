@@ -1,0 +1,22 @@
+html{
+    height: 100%;
+}
+
+body{
+    height: 98%;
+}
+
+.sidebar {
+    background-color: grey;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100%;
+}
+
+.projects {
+    background-color: blue;
+    height: 100%;
+}
