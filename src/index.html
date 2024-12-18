@@ -6,6 +6,53 @@
     <title>Todo List</title>
 </head>
 <body>
-    
+    <div>
+        <button id="newProject">Create New Project</button>
+        <button id="newTodo">Create New Todo</button>
+        <dialog id="todoDialog">
+            <form method="dialog">
+                <p>
+                    <label for="title">Title: </label>
+                    <input type="text" id="title" name="title">
+                </p>
+                <p>
+                    <label for="description">Description: </label>
+                    <input type="text" name="description" id="description">
+                </p>
+                <p>
+                    <label for="dueDate">Due date: </label>
+                    <input type="text" name="dueDate" id="dueDate">
+                </p>
+                <p>
+                    <label for="priority">Priority Level: </label>
+                    <input type="text" name="priority" id="priority">
+                </p>
+                <p>
+                    <label for="notes">Additional Notes: </label>
+                    <input type="text" name="notes" id="notes">
+                </p>
+                <p>
+                    <label for="status">Task Status: </label>
+                    <input type="text" name="status" id="status">
+                </p>
+                <p>
+                    <button id="todoCancel">Cancel</button>
+                    <button id="toDoConfirm">Confirm</button>
+                </p>
+            </form>
+        </dialog>
+        <dialog>
+            <form method="dialog">
+                <p>
+                    <label for="projectName">Project Name: </label>
+                    <input type="text" name="projectName" id="projectName">
+                </p>
+                <p>
+                    <button id="projectCancel">Cancel</button>
+                    <button id="projectConfirm">Confirm</button>
+                </p>
+            </form>
+        </dialog>
+    </div>
 </body>
 </html>
