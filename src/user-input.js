@@ -28,8 +28,8 @@ todoFormControls.todoConfirmBtn.addEventListener('click', getProjectName);
 projectFormControls.projectConfirmBtn.addEventListener('click', getTodoValues);
 
 export const getUserInput = function(){
-    let projectName = getProjectName();
-    let todoInput = getTodoValues();
+    let projectName = getProjectName(event);
+    let todoInput = getTodoValues(event);
     let userInput = {};
     userInput.projectName = projectName;
 
