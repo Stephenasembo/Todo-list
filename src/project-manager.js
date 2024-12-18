@@ -1,6 +1,8 @@
 const projectManager = (function(todo){
-    function createNewProject(){
-        const project = [];
+    function createNewProject(name){
+        const project = {};
+        project.name = name;
+        project.todos = [];
         return project;
     }
 
@@ -9,11 +11,11 @@ const projectManager = (function(todo){
     }
 
     function addTodo(project, todo){
-        project.push(todo);
+        project.todos.push(todo);
     }
 
     function removeTodo(project, todo){
-        project.pop(todo);
+        project.todos.pop(todo);
     }
 
     return {
