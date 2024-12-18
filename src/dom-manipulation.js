@@ -8,19 +8,35 @@ export const formHandling = (function(){
         projectFormControls.projectCancelBtn.addEventListener('click', closeForm)
     })();
 
-    function openTodoForm(){
+    function openTodoForm(event){
         event.preventDefault();
+        clearTodoForm();
         domNodes.todoDialog.showModal();
     }
 
-    function openProjectForm(){
+    function openProjectForm(event){
         event.preventDefault();
+        clearProjectForm();
         domNodes.projectDialog.showModal();
     }
 
-    function closeForm(){
+    function closeForm(event){
         event.preventDefault();
         domNodes.projectDialog.close();
         domNodes.todoDialog.close();
+    }
+
+    function clearTodoForm(){
+        for (let control in todoFormControls){
+            todoFormControls[control].value = '';
+        }
+    }
+    
+    function clearProjectForm(){
+        projectFormControls.projectNameInput.value = '';
+    }
+
+    return {
+        closeForm,
     }
 })();
