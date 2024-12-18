@@ -5,7 +5,7 @@ export const formHandling = (function(){
         domNodes.newProjectBtn.addEventListener('click', openProjectForm);
         domNodes.newTodoBtn.addEventListener('click', openTodoForm);
         todoFormControls.todoCancelBtn.addEventListener('click', closeForm);
-        projectFormControls.projectDialog.addEventListener('click', closeForm)
+        projectFormControls.projectCancelBtn.addEventListener('click', closeForm)
     })();
 
     function openTodoForm(){
