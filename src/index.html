@@ -35,8 +35,20 @@
                     <input type="text" name="dueDate" id="dueDate">
                 </p>
                 <p>
-                    <label for="priority">Priority Level: </label>
-                    <input type="text" name="priority" id="priority">
+                    Priority Level: 
+                    <span>
+                        <label for="urgent">Urgent</label>
+                        <input type="radio" value="urgent" id="urgent" name="priority">
+                    </span>
+                    <span>
+                        <label for="important">Important</label>
+                        <input type="radio" value="important" id="important" name="priority">
+                    </span>
+                    <span>
+                        <label for="lowImportance">Low Importance</label>
+                        <input type="radio" value="lowImportance" id="lowImportance" name="priority">
+                    </span>
+
                 </p>
                 <p>
                     <label for="notes">Additional Notes: </label>
