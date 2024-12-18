@@ -1,13 +1,12 @@
 export default (function(){
-    function createNewTodo(title = '', description = '', dueDate = '',
-     priority = '', notes = '', status = ''){
+    function createNewTodo(obj){
         return {
-            title,
-            description,
-            dueDate,
-            priority,
-            notes,
-            status
+            title: obj.title,
+            description: obj.description,
+            dueDate: obj.dueDate,
+            priority: obj.priority,
+            notes: obj.notes,
+            status: obj.status,
         }
     }    
 
