@@ -9,14 +9,17 @@ export const formHandling = (function(){
     })();
 
     function openTodoForm(){
+        event.preventDefault();
         domNodes.todoDialog.showModal();
     }
 
     function openProjectForm(){
+        event.preventDefault();
         domNodes.projectDialog.showModal();
     }
 
     function closeForm(){
+        event.preventDefault();
         domNodes.projectDialog.close();
         domNodes.todoDialog.close();
     }

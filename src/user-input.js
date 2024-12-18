@@ -1,10 +1,12 @@
 import { todoFormControls, projectFormControls } from './cached-dom.js';
 
 const getProjectName = function(){
+    event.preventDefault();
     return projectFormControls.projectNameInput.value;
 }
 
 const getTodoValues = function(){
+    event.preventDefault();
     let title = todoFormControls.titleInput.value;
     let description = todoFormControls.desciptionInput.value;
     let dueDate = todoFormControls.dueDateInput.value;
