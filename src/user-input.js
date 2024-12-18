@@ -1,17 +1,18 @@
-import { domNodes } from './cached-dom.js';
+import { todoFormControls, projectFormControls } from './cached-dom.js';
 
-domNodes.projectConfirmBtn.addEventListener('click', getProjectName);
-domNodes.todoConfirmBtn.addEventListener('click', getUserInput)
-export const getUserInput = function(){
-    let title = prompt('What is the title of your todo?')
-    let description = prompt('Can you provide a desciption of your todo?')
-    let dueDate = prompt('When is your todo due?')
-    let priority = prompt('Can you provide the priority level of this todo?')
-    let notes = prompt('Are there additional notes on this todo to provide?')
-    let status = prompt('What is the status of this todo?')
+const getProjectName = function(){
+    return projectFormControls.projectNameInput.value;
+}
+
+const getTodoValues = function(){
+    let title = todoFormControls.titleInput.value;
+    let description = todoFormControls.desciptionInput.value;
+    let dueDate = todoFormControls.dueDateInput.value;
+    let priority = todoFormControls.priorityInput.value;
+    let notes = todoFormControls.notesInput.value;
+    let status = todoFormControls.statusInput.value;
 
     return {
-        projectName,
         title,
         description,
         dueDate,
@@ -19,4 +20,18 @@ export const getUserInput = function(){
         notes,
         status
     }
+}
+
+todoFormControls.todoConfirmBtn.addEventListener('click', getProjectName);
+projectFormControls.projectConfirmBtn.addEventListener('click', getTodoValues);
+
+export const getUserInput = function(){
+    let projectName = getProjectName();
+    let todoInput = getTodoValues();
+    let userInput = {};
+    userInput.projectName = projectName;
+
+    Object.assign(userInput, todoInput);
+
+    return userInput;
 }
