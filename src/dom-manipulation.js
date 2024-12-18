@@ -1,11 +1,11 @@
-import { domNodes } from './cached-dom';
+import { domNodes, todoFormControls, projectFormControls } from './cached-dom';
 
 export const formHandling = (function(){
     const addEventListeners = (function(){
         domNodes.newProjectBtn.addEventListener('click', openProjectForm);
         domNodes.newTodoBtn.addEventListener('click', openTodoForm);
-        domNodes.todoCancelBtn.addEventListener('click', closeForm);
-        domNodes.projectDialog.addEventListener('click', closeForm)
+        todoFormControls.todoCancelBtn.addEventListener('click', closeForm);
+        projectFormControls.projectDialog.addEventListener('click', closeForm)
     })();
 
     function openTodoForm(){
