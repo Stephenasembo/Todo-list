@@ -1,11 +1,13 @@
-import { displayProjects, displayTodos } from './display-controller.js';
+import { updateDisplay } from './display-controller.js';
 
 const projectManager = (function(){
+    let display = null;
     function createNewProject(name){
         const project = {};
         project.name = name;
         project.todos = [];
-        displayProjects(name);
+        display = updateDisplay();
+        display.newProject(name);
         return project;
     }
 
@@ -15,7 +17,7 @@ const projectManager = (function(){
 
     function addTodo(project, todo){
         project.todos.push(todo);
-        displayTodos(todo);
+        display.newTodo(todo);
     }
 
     function removeTodo(project, todo){
