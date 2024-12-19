@@ -28,3 +28,26 @@ export function updateDisplay(){
         displayNodes.projectsDiv.appendChild(projectDiv);
     }
 }
+
+export function displayAvailableProjects(){
+    const projectsDialog = document.createElement('dialog');
+    const projectsForm = document.createElement('form');
+    projectsForm.setAttribute('method', 'dialog');
+    projectsDialog.appendChild(projectsForm);
+
+    for (let project of userProjects){
+        const projectBtn = document.createElement('button');
+        projectBtn.textContent = project.name;
+        projectBtn.setAttribute('id', project.name)
+        projectsForm.appendChild(projectBtn);
+    }
+
+    const btnPara = document.createElement('p');
+    const cancelBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    btnPara.appendChild(cancelBtn);
+    projectsForm.appendChild(btnPara);
+
+    displayNodes.projectsDiv.appendChild(projectsDialog);
+    projectsDialog.setAttribute('open', 'true');
+}

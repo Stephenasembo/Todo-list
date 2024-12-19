@@ -25,7 +25,7 @@ export const createUserTodo = function(event){
     }
     else{
         let choice = pickProject();
-        if (choice == 'Error'){
+        if (choice == 'Error' || !(choice)){
             todoManager.deleteTodo(createdTodo);
             return;
         }
