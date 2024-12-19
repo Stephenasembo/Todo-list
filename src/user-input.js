@@ -3,8 +3,7 @@ import { todoFormControls, projectFormControls } from './cached-dom.js';
 let newProjectName = null;
 let newTodoObj = null;
 
-const getProjectName = function(event){
-    event.preventDefault();
+const getProjectName = function(){
     newProjectName = projectFormControls.projectNameInput.value;
 }
 

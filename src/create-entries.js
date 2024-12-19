@@ -1,14 +1,16 @@
 import { todoFormControls, projectFormControls } from './cached-dom.js';
-import { formHandling } from './dom-manipulation.js';
+import { formHandling } from './form-manipulation.js';
 import { projectManager } from './project-manager.js';
 import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
 import { defaultProject } from './index.js';
 import { pickProject, userProjects } from './choose-project.js';
 
-export const createUserProject = function(event){
-    formHandling.closeForm(event);
+export const createUserProject = function(){
     let input = getUserInput().projectName;
+    if(!input){
+        return;
+    }
     const newProject = projectManager.createNewProject(input);
 };
 
