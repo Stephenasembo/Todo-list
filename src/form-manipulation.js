@@ -29,6 +29,9 @@ export const formHandling = (function(){
             if (control == 'urgentRadio' || control == 'importantRadio' || control == 'lowImportance'){
                 todoFormControls[control].checked = false;
             }
+            else if (control == 'notStartedRadio' || control == 'inProgressRadio' || control == 'completedRadio'){
+                todoFormControls[control].checked = false;
+            }
             else{
                 todoFormControls[control].value = '';
             }
