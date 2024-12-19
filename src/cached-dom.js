@@ -12,11 +12,15 @@ const titleInput = document.querySelector('#title');
 const desciptionInput = document.querySelector('#description');
 const dueDateInput = document.querySelector('#dueDate');
 const notesInput = document.querySelector('#notes');
-const statusInput = document.querySelector('#status');
 
 const urgentRadio = document.querySelector('#urgent');
 const importantRadio = document.querySelector('#important');
 const lowImportanceRadio = document.querySelector('#lowImportance');
+
+const taskPara = document.querySelector('#task');
+const notStartedRadio = document.querySelector('#notStarted');
+const inProgressRadio = document.querySelector('#inProgress');
+const completedRadio = document.querySelector('#completed');
 
 const projectsDiv = document.querySelector('.projects');
 
@@ -32,12 +36,15 @@ export const todoFormControls = {
     desciptionInput,
     dueDateInput,
     notesInput,
-    statusInput,
     todoCancelBtn,
     todoConfirmBtn,
     urgentRadio,
     importantRadio,
     lowImportanceRadio,
+    taskPara,
+    notStartedRadio,
+    inProgressRadio,
+    completedRadio,
 }
 
 export const projectFormControls = {

@@ -54,9 +54,20 @@
                     <label for="notes">Additional Notes: </label>
                     <input type="text" name="notes" id="notes">
                 </p>
-                <p>
-                    <label for="status">Task Status: </label>
-                    <input type="text" name="status" id="status" required>
+                <p id="task">
+                    Task Status: 
+                    <span>
+                        <input type="radio" value="notStarted" id="notStarted" name="taskStatus">
+                        <label for="notStarted">Not started</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="inProgress" id="inProgress" name="taskStatus">
+                        <label for="inProgress">In progress</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="completed" id="completed" name="taskStatus" required>
+                        <label for="completed">Completed</label>
+                    </span>
                 </p>
                 <p>
                     <button id="todoCancel">Cancel</button>
