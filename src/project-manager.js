@@ -7,8 +7,6 @@ const projectManager = (function(){
         const project = {};
         project.name = name;
         project.todos = [];
-        display = updateDisplay();
-        display.newProject(name);
         userProjects.push(project);
         console.log(userProjects)
         return project;
@@ -20,7 +18,6 @@ const projectManager = (function(){
 
     function addTodo(project, todo){
         project.todos.push(todo);
-        display.newTodo(todo);
     }
 
     function removeTodo(project, todo){

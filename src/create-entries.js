@@ -5,6 +5,7 @@ import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
 import { defaultProject } from './index.js';
 import { pickProject, userProjects } from './choose-project.js';
+import { updateDisplay } from './display-controller.js'
 
 export const createUserProject = function(){
     let input = getUserInput().projectName;
@@ -12,6 +13,7 @@ export const createUserProject = function(){
         return;
     }
     const newProject = projectManager.createNewProject(input);
+    updateDisplay();
 };
 
 export const createUserTodo = function(event){
@@ -29,6 +31,7 @@ export const createUserTodo = function(event){
         }
         projectManager.addTodo(choice, createdTodo);
         console.log(userProjects)
+        updateDisplay();
     }
 }
 

@@ -1,32 +1,30 @@
 import { displayNodes } from './cached-dom';
+import { userProjects } from './choose-project';
 
-export const updateDisplay = function (){
-    const projectDiv = document.createElement('div');
-    function newProject(text){
+export function updateDisplay(){
+    displayNodes.projectsDiv.innerHTML = '';
+    for (let project of userProjects){
+        const projectDiv = document.createElement('div');
         const heading = document.createElement('h2');
-        heading.textContent = text;
-        projectDiv.appendChild(heading);    
-    }
-    function newTodo(object){
-        const todoDiv = document.createElement('div');
-        const titlePara = document.createElement('p');
-        const dueDatepara = document.createElement('p');
-        const priorityPara = document.createElement('p');
-    
-        titlePara.textContent = object.title;
-        dueDatepara.textContent = object.dueDate;
-        priorityPara.textContent = object.priority;
-    
-        todoDiv.appendChild(titlePara);
-        todoDiv.appendChild(dueDatepara);
-        todoDiv.appendChild(priorityPara);
-    
-        projectDiv.appendChild(todoDiv);
-    }
+        heading.textContent = project.name;
+        projectDiv.appendChild(heading);
 
-    displayNodes.projectsDiv.appendChild(projectDiv);
-    return {
-        newProject,
-        newTodo,
+        for (let todo of (project.todos)){
+            const todoDiv = document.createElement('div');
+            const titlePara = document.createElement('p');
+            const priorityPara = document.createElement('p');
+            const dueDatepara = document.createElement('p');
+
+            titlePara.textContent = todo.title;
+            priorityPara.textContent = todo.priorityl;
+            dueDatepara.textContent = todo.dueDate;
+
+            todoDiv.appendChild(titlePara);
+            todoDiv.appendChild(priorityPara);
+            todoDiv.appendChild(dueDatepara);
+
+            projectDiv.appendChild(todoDiv);
+        }
+        displayNodes.projectsDiv.appendChild(projectDiv);
     }
 }

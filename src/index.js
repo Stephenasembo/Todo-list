@@ -6,5 +6,7 @@ import { createUserProject, createUserTodo } from './create-entries.js';
 import './styles.css';
 import { displayProjects } from './display-controller.js';
 import './date-constraint.js';
+import { updateDisplay } from './display-controller.js'
 
 export let defaultProject = projectManager.createNewProject('Default Project');
+updateDisplay();
