@@ -1,8 +1,11 @@
 import { todoFormControls, projectFormControls } from './cached-dom.js';
 
+let newProjectName = null;
+let newTodoObj = null;
+
 const getProjectName = function(event){
     event.preventDefault();
-    return projectFormControls.projectNameInput.value;
+    newProjectName = projectFormControls.projectNameInput.value;
 }
 
 const getTodoValues = function(event){
@@ -27,7 +30,7 @@ const getTodoValues = function(event){
         priority = 'lowImportance';
     }
 
-    return {
+    newTodoObj = {
         title,
         description,
         dueDate,
