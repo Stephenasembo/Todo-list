@@ -28,7 +28,12 @@ export const formHandling = (function(){
 
     function clearTodoForm(){
         for (let control in todoFormControls){
-            todoFormControls[control].value = '';
+            if (control == 'urgentRadio' || control == 'importantRadio' || control == 'lowImportance'){
+                todoFormControls[control].checked = false;
+            }
+            else{
+                todoFormControls[control].value = '';
+            }
         }
     }
     
