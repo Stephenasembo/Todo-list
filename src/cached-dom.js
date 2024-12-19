@@ -11,9 +11,13 @@ const projectNameInput = document.querySelector('#projectName')
 const titleInput = document.querySelector('#title');
 const desciptionInput = document.querySelector('#description');
 const dueDateInput = document.querySelector('#dueDate');
-const priorityInput = document.querySelector('#priority');
+const priorityInput = document.querySelector('input[type="radio"]:checked');
 const notesInput = document.querySelector('#notes');
 const statusInput = document.querySelector('#status');
+
+const urgentRadio = document.querySelector('#urgent');
+const importantRadio = document.querySelector('#important');
+const lowImportanceRadio = document.querySelector('#lowImportance');
 
 const projectsDiv = document.querySelector('.projects');
 
@@ -33,6 +37,9 @@ export const todoFormControls = {
     statusInput,
     todoCancelBtn,
     todoConfirmBtn,
+    urgentRadio,
+    importantRadio,
+    lowImportanceRadio,
 }
 
 export const projectFormControls = {
