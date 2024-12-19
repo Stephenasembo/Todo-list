@@ -15,16 +15,21 @@ export const createUserProject = function(){
 };
 
 export const createUserTodo = function(event){
-    formHandling.closeForm(event);
+    let isTodoValid = true;
     let input = getUserInput();
     let createdTodo = todoManager.createNewTodo(input);
-    let choice = pickProject();
-    if (choice == 'Error'){
-        todoManager.deleteTodo(createdTodo);
-        return;
+    if(!createdTodo.title || !createdTodo.dueDate || !createdTodo.priority || !createdTodo.status){
+        isTodoValid = false;
     }
-    projectManager.addTodo(choice, createdTodo);
-    console.log(userProjects)
+    else{
+        let choice = pickProject();
+        if (choice == 'Error'){
+            todoManager.deleteTodo(createdTodo);
+            return;
+        }
+        projectManager.addTodo(choice, createdTodo);
+        console.log(userProjects)
+    }
 }
 
 projectFormControls.projectConfirmBtn.addEventListener('click', createUserProject);

@@ -8,28 +8,27 @@ const getProjectName = function(){
 }
 
 const getTodoValues = function(event){
-    event.preventDefault();
     const priorityInput = document.querySelector('input[type="radio"]:checked');
     let title = todoFormControls.titleInput.value;
     let description = todoFormControls.desciptionInput.value;
     let dueDate = todoFormControls.dueDateInput.value;
-    let priority;
+    let priority = null;
     let notes = todoFormControls.notesInput.value;
     let status = todoFormControls.statusInput.value;
 
+    if(priorityInput){
+        if(priorityInput.value === 'urgent'){
+            priority = 'urgent';
+        }
 
-    if(priorityInput.value === 'urgent'){
-        priority = 'urgent';
+        else if(priorityInput.value === 'important'){
+            priority = 'important';
+        }
+
+        else if(priorityInput.value === 'lowImportance'){
+            priority = 'lowImportance';
+        }
     }
-
-    else if(priorityInput.value === 'important'){
-        priority = 'important';
-    }
-
-    else if(priorityInput.value === 'lowImportance'){
-        priority = 'lowImportance';
-    }
-
     newTodoObj = {
         title,
         description,
