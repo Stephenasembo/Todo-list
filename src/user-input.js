@@ -10,9 +10,22 @@ const getTodoValues = function(event){
     let title = todoFormControls.titleInput.value;
     let description = todoFormControls.desciptionInput.value;
     let dueDate = todoFormControls.dueDateInput.value;
-    let priority = todoFormControls.priorityInput.value;
+    let priority;
     let notes = todoFormControls.notesInput.value;
     let status = todoFormControls.statusInput.value;
+
+
+    if(todoFormControls.priorityInput.value === 'urgent'){
+        priority = 'urgent';
+    }
+
+    else if(todoFormControls.priorityInput.value === 'important'){
+        priority = 'important';
+    }
+
+    else if(todoFormControls.priorityInput.value === 'lowImportance'){
+        priority = 'lowImportance';
+    }
 
     return {
         title,
