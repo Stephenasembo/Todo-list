@@ -4,7 +4,7 @@ import { projectManager } from './project-manager.js';
 import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
 import { defaultProject } from './index.js';
-import { userProjects } from './choose-project.js';
+import { pickProject, userProjects } from './choose-project.js';
 
 export const createUserProject = function(event){
     formHandling.closeForm(event);
@@ -16,7 +16,12 @@ export const createUserTodo = function(event){
     formHandling.closeForm(event);
     let input = getUserInput();
     let createdTodo = todoManager.createNewTodo(input);
-    projectManager.addTodo(userProjects[0], createdTodo);
+    let choice = pickProject();
+    if (choice == 'Error'){
+        todoManager.deleteTodo(createdTodo);
+        return;
+    }
+    projectManager.addTodo(choice, createdTodo);
     console.log(userProjects)
 }
 
