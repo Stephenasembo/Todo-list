@@ -1,4 +1,5 @@
 import { updateDisplay } from './display-controller.js';
+import { userProjects } from './choose-project.js'
 
 const projectManager = (function(){
     let display = null;
@@ -8,6 +9,8 @@ const projectManager = (function(){
         project.todos = [];
         display = updateDisplay();
         display.newProject(name);
+        userProjects.push(project);
+        console.log(userProjects)
         return project;
     }
 
