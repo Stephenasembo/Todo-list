@@ -37,8 +37,8 @@ const getTodoValues = function(event){
     }
 }
 
-todoFormControls.todoConfirmBtn.addEventListener('click', getProjectName);
-projectFormControls.projectConfirmBtn.addEventListener('click', getTodoValues);
+todoFormControls.todoConfirmBtn.addEventListener('click', getTodoValues);
+projectFormControls.projectConfirmBtn.addEventListener('click', getProjectName);
 
 export const getUserInput = function(){
     let projectName = getProjectName(event);
