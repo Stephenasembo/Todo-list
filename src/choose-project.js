@@ -20,8 +20,11 @@ export function pickProject(){
 */
 
 export function pickProject(){
-    displayAvailableProjects();
-    const cacheDialog = function (){
-        
+    let projectBtns = displayAvailableProjects();
+    projectBtns.btnArray.forEach((btn) => {
+        btn.addEventListener('click', chosenProject);
+    });
+    function chosenProject(event){
+        alert('hello my id is ' + event.target.id)
     }
 }

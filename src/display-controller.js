@@ -35,11 +35,14 @@ export function displayAvailableProjects(){
     projectsForm.setAttribute('method', 'dialog');
     projectsDialog.appendChild(projectsForm);
 
+    let btnArray = [];
+
     for (let project of userProjects){
         const projectBtn = document.createElement('button');
         projectBtn.textContent = project.name;
         projectBtn.setAttribute('id', project.name)
         projectsForm.appendChild(projectBtn);
+        btnArray.push(projectBtn);
     }
 
     const btnPara = document.createElement('p');
@@ -50,4 +53,8 @@ export function displayAvailableProjects(){
 
     displayNodes.projectsDiv.appendChild(projectsDialog);
     projectsDialog.setAttribute('open', 'true');
+
+    return{
+        btnArray,
+    }
 }
