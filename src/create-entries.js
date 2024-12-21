@@ -24,14 +24,7 @@ export const createUserTodo = function(event){
         isTodoValid = false;
     }
     else{
-        let choice = pickProject();
-        if (choice == 'Error' || !(choice)){
-            todoManager.deleteTodo(createdTodo);
-            return;
-        }
-        projectManager.addTodo(choice, createdTodo);
-        console.log(userProjects)
-        updateDisplay();
+        pickProject(createdTodo);
     }
 }
 
