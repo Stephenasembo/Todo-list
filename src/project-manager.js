@@ -1,6 +1,6 @@
 import { updateDisplay } from './display-controller.js';
 import { userProjects } from './choose-project.js'
-import { saveProject, retrieveProject } from './local-storage.js'
+import { saveProject, retrieveProject, saveTodos } from './local-storage.js'
 
 const projectManager = (function(){
     let display = null;
@@ -20,6 +20,7 @@ const projectManager = (function(){
 
     function addTodo(project, todo){
         project.todos.push(todo);
+        saveTodos(project, todo);
     }
 
     function removeTodo(project, todo){
