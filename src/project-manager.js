@@ -49,6 +49,7 @@ const projectManager = (function(){
         })
         userProjects.splice(projectIndex, 1);
         saveUserProjects();
+        updateDisplay();
     }
 
     function addTodo(project, todo){
