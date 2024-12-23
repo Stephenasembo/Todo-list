@@ -16,13 +16,17 @@ const projectManager = (function(){
         const project = {};
         project.name = name;
         project.todos = [];
-        userProjects.push(project);
-        console.log(userProjects)
         if(name in localStorage){
             return;
         }
-        saveProject(name, project);
-        return project;
+        else{
+            userProjects = retrieveUserProjects();
+            userProjects.push(project);
+            saveUserProjects();
+            console.log(userProjects)
+            saveProject(name, project);
+            return project;    
+        }
     }
 
     function deleteProject(project){
