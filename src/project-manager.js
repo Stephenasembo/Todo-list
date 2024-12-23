@@ -42,7 +42,13 @@ const projectManager = (function(){
     }
 
     function deleteProject(event){
-        alert(event.target.id);
+        let selectedProject = event.target.id;
+        userProjects = retrieveUserProjects();
+        let projectIndex = userProjects.findIndex((project) => {
+                return project.name == selectedProject;
+        })
+        userProjects.splice(projectIndex, 1);
+        saveUserProjects();
     }
 
     function addTodo(project, todo){
