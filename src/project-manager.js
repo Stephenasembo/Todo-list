@@ -16,15 +16,26 @@ const projectManager = (function(){
         const project = {};
         project.name = name;
         project.todos = [];
-        if(name in localStorage){
-            return;
-        }
-        else{
+        if (userProjects.length < 1){
             userProjects = retrieveUserProjects();
             userProjects.push(project);
             saveUserProjects();
             console.log(userProjects)
-            return project;    
+            return project;
+        }
+        else{
+            for (let createdProject of userProjects){
+                if(createdProject.name == name){
+                    return;
+                }
+                else{
+                    userProjects = retrieveUserProjects();
+                    userProjects.push(project);
+                    saveUserProjects();
+                    console.log(userProjects)
+                    return project;    
+                }
+            }
         }
     }
 
