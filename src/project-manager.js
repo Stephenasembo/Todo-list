@@ -1,5 +1,5 @@
 import { updateDisplay } from './display-controller.js';
-import { saveProject, retrieveProject, saveUserProjects, retrieveUserProjects } from './local-storage.js'
+import { saveUserProjects, retrieveUserProjects } from './local-storage.js'
 
 export let userProjects;
 if('userProjects' in localStorage){
@@ -24,7 +24,6 @@ const projectManager = (function(){
             userProjects.push(project);
             saveUserProjects();
             console.log(userProjects)
-            saveProject(name, project);
             return project;    
         }
     }
