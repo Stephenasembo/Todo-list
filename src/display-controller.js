@@ -16,7 +16,7 @@ export function updateDisplay(){
             const dueDatepara = document.createElement('p');
 
             titlePara.textContent = todo.title;
-            priorityPara.textContent = todo.priorityl;
+            priorityPara.textContent = todo.priority;
             dueDatepara.textContent = todo.dueDate;
 
             todoDiv.appendChild(titlePara);
