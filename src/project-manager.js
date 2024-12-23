@@ -50,6 +50,7 @@ const projectManager = (function(){
         userProjects.splice(projectIndex, 1);
         saveUserProjects();
         updateDisplay();
+        addDeleteBtns();
     }
 
     function addTodo(project, todo){
