@@ -7,6 +7,8 @@ export function updateDisplay(){
         const projectDiv = document.createElement('div');
         const projectDeleteBtn = document.createElement('button');
         projectDeleteBtn.textContent = 'Delete Project';
+        projectDeleteBtn.classList.toggle('deleteProject');
+        projectDeleteBtn.setAttribute('id', project.name);
         const heading = document.createElement('h2');
         heading.textContent = project.name;
         projectDiv.appendChild(heading);

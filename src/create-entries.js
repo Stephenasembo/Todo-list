@@ -20,6 +20,7 @@ export const createUserProject = function(name){
         const newProject = projectManager.createNewProject(input);
         updateDisplay();
     }
+    projectManager.addDeleteBtns();
 };
 
 export const createUserTodo = function(event){

@@ -41,8 +41,8 @@ const projectManager = (function(){
         }
     }
 
-    function deleteProject(project){
-        project = null;
+    function deleteProject(event){
+        alert(event.target.id);
     }
 
     function addTodo(project, todo){
@@ -56,6 +56,15 @@ const projectManager = (function(){
         }
     }
 
+    function addDeleteBtns(){
+        let deleteProjectBtns = document.querySelectorAll('.deleteProject');
+        deleteProjectBtns = Array.from(deleteProjectBtns);
+        console.log(deleteProjectBtns);
+        deleteProjectBtns.forEach((btn) => {
+            btn.addEventListener('click', deleteProject)
+        })
+    }
+
     function removeTodo(project, todo){
         project.todos.pop(todo);
     }
@@ -65,6 +74,7 @@ const projectManager = (function(){
         deleteProject,
         addTodo,
         removeTodo,
+        addDeleteBtns,
     }
 })()
 
