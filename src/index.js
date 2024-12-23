@@ -15,3 +15,4 @@ if (createdProjectsArr.length < 1){
     let defaultProject = createUserProject('Default Project');
 }
 updateDisplay();
+projectManager.addDeleteBtns();
