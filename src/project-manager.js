@@ -46,14 +46,12 @@ const projectManager = (function(){
     }
 
     function addTodo(project, todo){
-        if(project.name in localStorage){
-            userProjects = retrieveUserProjects();
-            for (let createdProject of userProjects){
-                if (createdProject.name == project.name){
-                    createdProject.todos.push(todo);
-                    saveUserProjects();
-                    break;
-                }
+        userProjects = retrieveUserProjects();
+        for (let createdProject of userProjects){
+            if (createdProject.name == project.name){
+                createdProject.todos.push(todo);
+                saveUserProjects();
+                break;
             }
         }
     }
