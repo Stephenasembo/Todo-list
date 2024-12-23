@@ -9,5 +9,5 @@ import './date-constraint.js';
 import { updateDisplay } from './display-controller.js'
 
 window.localStorage;
-export let defaultProject = projectManager.createNewProject('Default Project');
-updateDisplay();
+ export let defaultProject = createUserProject('Default Project');
+// updateDisplay();

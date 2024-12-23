@@ -7,13 +7,19 @@ import { defaultProject } from './index.js';
 import { pickProject } from './choose-project.js';
 import { updateDisplay } from './display-controller.js'
 
-export const createUserProject = function(){
-    let input = getUserInput().projectName;
-    if(!input){
-        return;
+export const createUserProject = function(name){
+    if(name == 'Default Project'){
+        const newProject = projectManager.createNewProject(name);
+        updateDisplay();    
     }
-    const newProject = projectManager.createNewProject(input);
-    updateDisplay();
+    else{
+        let input = getUserInput().projectName;
+        if(!input){
+            return;
+        }
+        const newProject = projectManager.createNewProject(input);
+        updateDisplay();
+    }
 };
 
 export const createUserTodo = function(event){
