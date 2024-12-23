@@ -8,7 +8,7 @@ import { pickProject } from './choose-project.js';
 import { updateDisplay } from './display-controller.js'
 
 export const createUserProject = function(name){
-    if(name == 'Default Project'){
+    if(typeof(name) == 'string'){
         const newProject = projectManager.createNewProject(name);
         updateDisplay();    
     }
