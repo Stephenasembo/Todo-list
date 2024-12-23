@@ -7,13 +7,6 @@ function saveProject(projectName, project){
 function retrieveProject(projectName){
     return JSON.parse(localStorage.getItem(projectName));
 }
-function saveTodos(project, todo){
-    let todoName = todo.title;
-    localStorage.setItem(todoName, JSON.stringify(todo));
-    saveProject(project.name, project);
-    todo.projectOwner = project.name;
-
-}
 
 function saveUserProjects(){
     saveProject('userProjects', userProjects);
@@ -22,4 +15,4 @@ function saveUserProjects(){
 function retrieveUserProjects(){
     return retrieveProject('userProjects')
 }
-export { saveProject, retrieveProject, saveTodos, saveUserProjects, retrieveUserProjects }
+export { saveProject, retrieveProject, saveUserProjects, retrieveUserProjects }
