@@ -1,3 +1,5 @@
+import { userProjects } from "./choose-project";
+
 function saveProject(projectName, project){
     localStorage.setItem(projectName, JSON.stringify(project));
 }
@@ -12,4 +14,12 @@ function saveTodos(project, todo){
     todo.projectOwner = project.name;
 
 }
-export { saveProject, retrieveProject, saveTodos }
+
+function saveUserProjects(){
+    saveProject('userProjects', userProjects);
+}
+
+function retrieveUserProjects(){
+    retrieveProject('userProjects')
+}
+export { saveProject, retrieveProject, saveTodos, saveUserProjects, retrieveUserProjects }
