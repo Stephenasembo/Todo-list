@@ -16,24 +16,26 @@ const projectManager = (function(){
         const project = {};
         project.name = name;
         project.todos = [];
-        if (userProjects.length < 1){
+
+        function addNewProject(){
             userProjects = retrieveUserProjects();
             userProjects.push(project);
             saveUserProjects();
             console.log(userProjects)
             return project;
+        }    
+
+        if (userProjects.length < 1){
+            return addNewProject();
         }
+
         else{
             for (let createdProject of userProjects){
                 if(createdProject.name == name){
                     return;
                 }
                 else{
-                    userProjects = retrieveUserProjects();
-                    userProjects.push(project);
-                    saveUserProjects();
-                    console.log(userProjects)
-                    return project;    
+                    return addNewProject();
                 }
             }
         }
