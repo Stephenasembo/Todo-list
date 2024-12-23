@@ -20,6 +20,6 @@ function saveUserProjects(){
 }
 
 function retrieveUserProjects(){
-    retrieveProject('userProjects')
+    return retrieveProject('userProjects')
 }
 export { saveProject, retrieveProject, saveTodos, saveUserProjects, retrieveUserProjects }
