@@ -1,4 +1,4 @@
-import { userProjects } from "./choose-project";
+import { userProjects } from './project-manager.js'
 
 function saveProject(projectName, project){
     localStorage.setItem(projectName, JSON.stringify(project));

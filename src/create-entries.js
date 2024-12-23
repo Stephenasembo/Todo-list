@@ -4,7 +4,7 @@ import { projectManager } from './project-manager.js';
 import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
 import { defaultProject } from './index.js';
-import { pickProject, userProjects } from './choose-project.js';
+import { pickProject } from './choose-project.js';
 import { updateDisplay } from './display-controller.js'
 
 export const createUserProject = function(){

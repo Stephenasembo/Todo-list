@@ -1,4 +1,4 @@
-export const userProjects = [];
+import { userProjects } from './project-manager.js'
 import { displayAvailableProjects, updateDisplay } from './display-controller.js'
 import { projectManager } from './project-manager.js';
 

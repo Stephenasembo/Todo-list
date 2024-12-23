@@ -1,5 +1,5 @@
 import { displayNodes } from './cached-dom';
-import { userProjects } from './choose-project';
+import { userProjects } from './project-manager.js'
 
 export function updateDisplay(){
     displayNodes.projectsDiv.innerHTML = '';
