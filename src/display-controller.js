@@ -5,9 +5,12 @@ export function updateDisplay(){
     displayNodes.projectsDiv.innerHTML = '';
     for (let project of userProjects){
         const projectDiv = document.createElement('div');
+        const projectDeleteBtn = document.createElement('button');
+        projectDeleteBtn.textContent = 'Delete Project';
         const heading = document.createElement('h2');
         heading.textContent = project.name;
         projectDiv.appendChild(heading);
+        projectDiv.appendChild(projectDeleteBtn);
 
         for (let todo of (project.todos)){
             const todoDiv = document.createElement('div');
