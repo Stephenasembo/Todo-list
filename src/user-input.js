@@ -1,4 +1,5 @@
 import { todoFormControls, projectFormControls } from './cached-dom.js';
+import { format } from 'date-fns';
 
 let newProjectName = null;
 let newTodoObj = null;
@@ -16,6 +17,8 @@ const getTodoValues = function(){
     let priority = null;
     let notes = todoFormControls.notesInput.value;
     let status = null;
+
+    dueDate = format(dueDate, "p 'on' PPPP");
 
     if(priorityInput){
         if(priorityInput.value == 'urgent'){
