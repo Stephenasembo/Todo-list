@@ -10,6 +10,9 @@ const projectManager = (function(){
         project.todos = [];
         userProjects.push(project);
         console.log(userProjects)
+        if(name in localStorage){
+            return;
+        }
         saveProject(name, project);
         return project;
     }
@@ -19,8 +22,12 @@ const projectManager = (function(){
     }
 
     function addTodo(project, todo){
-        project.todos.push(todo);
-        saveTodos(project, todo);
+        if(project.name in localStorage){
+            project = retrieveProject(project.name);
+            project.todos.push(todo);
+            saveTodos(project, todo);
+            saveProject(project.name, project);    
+        }
     }
 
     function removeTodo(project, todo){
