@@ -47,6 +47,19 @@ export default (function(){
         })
     }    
 
+    function expandTodo(){
+        alert('hello')
+    }
+
+    function addExpandTodoBtns(){
+        let expandTodoBtns = document.querySelectorAll('.deleteTodo');
+        expandTodoBtns = Array.from(expandTodoBtns);
+        console.log(expandTodoBtns);
+        expandTodoBtns.forEach((btn) => {
+            btn.addEventListener('click', expandTodo);
+        })
+    }
+
     return{
         createNewTodo,
         changeStatus,
