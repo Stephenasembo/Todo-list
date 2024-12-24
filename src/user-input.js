@@ -18,7 +18,9 @@ const getTodoValues = function(){
     let notes = todoFormControls.notesInput.value;
     let status = null;
 
-    dueDate = format(dueDate, "p 'on' PPPP");
+    if (dueDate){
+        dueDate = format(dueDate, "p 'on' PPPP");
+    }
 
     if(priorityInput){
         if(priorityInput.id == 'urgent'){
