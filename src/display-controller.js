@@ -106,8 +106,9 @@ export function displayTodoDetails(todo){
     todoDetailsDiv.appendChild(notesPara);
     todoDetailsDiv.appendChild(dueDatePara);
     todoDetailsDiv.appendChild(detailsCloseBtn);
+    detailsCloseBtn.classList.toggle('closeDetails');
 
     todoDetailsDialog.appendChild(todoDetailsDiv);
     displayNodes.projectsDiv.appendChild(todoDetailsDialog);
-    todoDetailsDialog.setAttribute('open', 'true');
+    todoDetailsDialog.classList.toggle('detailsDialog');
 }

@@ -48,7 +48,6 @@ export default (function(){
     }    
 
     function expandTodo(event){
-        alert(event.target.id);
         let projectIndex = 0;
         let createdProjectsArr = retrieveUserProjects();
         for (let createdProject of createdProjectsArr){
@@ -62,6 +61,13 @@ export default (function(){
                 break;
             }
             projectIndex+=1;
+        }
+        const detailsDialog = document.querySelector('.detailsDialog');
+        const closeBtn = document.querySelector('.closeDetails');
+        detailsDialog.showModal();
+        closeBtn.addEventListener('click', closeDetails);
+        function closeDetails(){
+            detailsDialog.close();
         }
     }
 
