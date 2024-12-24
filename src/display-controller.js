@@ -139,3 +139,53 @@ export function displayEditableContent(todo){
     displayNodes.projectsDiv.appendChild(editDialog);
     editDialog.classList.toggle('editDialog');
 }
+
+export function displayInputEdit(input){
+    const inputDialog = document.createElement('dialog');
+    const infoPara = document.createElement('p');
+    infoPara.textContent = `Enter updated value for the ${input}`;
+    const btnPara = document.createElement('p');
+    const cancelBtn = document.createElement('button');
+    const confirmBtn = document.createElement('button');
+    cancelBtn.textContent = 'Cancel';
+    confirmBtn.textContent = 'Confirm';
+    btnPara.appendChild(cancelBtn);
+    btnPara.appendChild(confirmBtn);
+    const formEdit = document.createElement('form');
+    formEdit.setAttribute('method', 'dialog');
+    const inputPara = document.createElement('div');
+    let createdInput = createInput(input);
+    inputPara.appendChild(createdInput);
+
+    formEdit.appendChild(inputPara);
+    formEdit.appendChild(btnPara);
+
+    inputDialog.appendChild(infoPara);
+    inputDialog.appendChild(formEdit);
+    displayNodes.projectsDiv.appendChild(inputDialog);
+    inputDialog.classList.toggle('inputDialog');
+}
+
+function createInput(input){
+    let element = document.createElement('input');
+    switch(input){
+        case 'title':
+        case 'description':
+            element.setAttribute('type', 'text');
+            break;
+
+        case 'due date':
+            element.setAttribute('type', 'datetime-local')
+            break;
+
+        case 'priority level':
+            break;
+
+        case 'task status':
+            break;
+
+        case 'additional note':
+            break;
+    }
+    return element;
+}
