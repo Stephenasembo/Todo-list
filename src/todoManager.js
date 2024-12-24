@@ -1,4 +1,4 @@
-import { updateDisplay } from "./display-controller";
+import { displayTodoDetails, updateDisplay } from "./display-controller";
 import { retrieveUserProjects, saveUserProjects } from "./local-storage";
 import { projectManager } from "./project-manager";
 
@@ -47,8 +47,22 @@ export default (function(){
         })
     }    
 
-    function expandTodo(){
-        alert('hello')
+    function expandTodo(event){
+        alert(event.target.id);
+        let projectIndex = 0;
+        let createdProjectsArr = retrieveUserProjects();
+        for (let createdProject of createdProjectsArr){
+            let todoIndex = createdProject.todos.findIndex((todo) => {
+                return todo.title == event.target.id;
+            })
+            if(todoIndex != -1){
+                let chosenTodo = createdProjectsArr[projectIndex].todos[todoIndex];
+                console.log(chosenTodo);
+                displayTodoDetails(chosenTodo);        
+                break;
+            }
+            projectIndex+=1;
+        }
     }
 
     function addExpandTodoBtns(){
