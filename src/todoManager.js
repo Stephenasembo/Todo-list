@@ -22,6 +22,15 @@ export default (function(){
         todo = null;
     }
 
+    function addDeleteBtns(){
+        let deleteTodoBtns = document.querySelectorAll('.deleteTodo');
+        deleteTodoBtns = Array.from(deleteTodoBtns);
+        console.log(deleteTodoBtns);
+        deleteTodoBtns.forEach((btn) => {
+            btn.addEventListener('click', deleteTodo)
+        })
+    }    
+
     return{
         createNewTodo,
         changeStatus,

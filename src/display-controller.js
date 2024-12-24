@@ -21,12 +21,16 @@ export function updateDisplay(){
             const titlePara = document.createElement('p');
             const priorityPara = document.createElement('p');
             const dueDatepara = document.createElement('p');
+            const deleteTodoBtn = document.createElement('button');
+            deleteTodoBtn.textContent = 'Delete Todo';
+            deleteTodoBtn.setAttribute('class', 'deleteTodo');
 
             titlePara.textContent = todo.title;
             priorityPara.textContent = todo.priority;
             dueDatepara.textContent = todo.dueDate;
 
             todoDiv.appendChild(titlePara);
+            todoDiv.appendChild(deleteTodoBtn);
             todoDiv.appendChild(priorityPara);
             todoDiv.appendChild(dueDatepara);
 
