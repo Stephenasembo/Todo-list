@@ -118,3 +118,24 @@ export function displayTodoDetails(todo){
     displayNodes.projectsDiv.appendChild(todoDetailsDialog);
     todoDetailsDialog.classList.toggle('detailsDialog');
 }
+
+export function displayEditableContent(todo){
+    const editDialog = document.createElement('dialog');
+    const contentPara = document.createElement('p');
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Close';
+
+    for (let input in todo){
+        const inputBtn = document.createElement('button');
+        inputBtn.textContent = input;
+        editDialog.appendChild(inputBtn);
+        inputBtn.classList.toggle('todoInput');
+        inputBtn.setAttribute('id', input);
+    }
+
+    editDialog.appendChild(contentPara);
+    editDialog.appendChild(closeBtn);
+    closeBtn.classList.toggle('closeEdit');
+    displayNodes.projectsDiv.appendChild(editDialog);
+    editDialog.classList.toggle('editDialog');
+}

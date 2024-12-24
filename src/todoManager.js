@@ -1,4 +1,4 @@
-import { displayTodoDetails, updateDisplay } from "./display-controller";
+import { displayEditableContent, displayTodoDetails, updateDisplay } from "./display-controller";
 import { retrieveUserProjects, saveUserProjects } from "./local-storage";
 import { projectManager } from "./project-manager";
 
@@ -81,7 +81,27 @@ export default (function(){
     }
 
     function editTodo(event){
-        alert('hello my id is: ' + event.target.id);
+        let projectIndex = 0;
+        let createdProjectsArr = retrieveUserProjects();
+        for (let createdProject of createdProjectsArr){
+            let todoIndex = createdProject.todos.findIndex((todo) => {
+                return todo.title == event.target.id;
+            })
+            if(todoIndex != -1){
+                let chosenTodo = createdProjectsArr[projectIndex].todos[todoIndex];
+                console.log(chosenTodo);
+                displayEditableContent(chosenTodo);        
+                break;
+            }
+            projectIndex+=1;
+        }
+        const editDialog = document.querySelector('.editDialog');
+        const closeBtn = document.querySelector('.closeEdit');
+        editDialog.showModal();
+        closeBtn.addEventListener('click', closeEdit);
+        function closeEdit(){
+            editDialog.close();
+        }
     }
 
     function addEditTodoBtns(){
