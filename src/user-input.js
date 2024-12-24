@@ -21,15 +21,15 @@ const getTodoValues = function(){
     dueDate = format(dueDate, "p 'on' PPPP");
 
     if(priorityInput){
-        if(priorityInput.value == 'urgent'){
+        if(priorityInput.id == 'urgent'){
             priority = 'urgent';
         }
 
-        else if(priorityInput.value == 'important'){
+        else if(priorityInput.id == 'important'){
             priority = 'important';
         }
 
-        else if(priorityInput.value == 'lowImportance'){
+        else if(priorityInput.id == 'lowImportance'){
             priority = 'lowImportance';
         }
     }
