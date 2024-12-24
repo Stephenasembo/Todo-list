@@ -1,4 +1,4 @@
-import { todoFormControls, projectFormControls } from './cached-dom.js';
+import { todoFormControls, projectFormControls, domNodes } from './cached-dom.js';
 import { formHandling } from './form-manipulation.js';
 import { projectManager } from './project-manager.js';
 import todoManager from './todoManager.js';
@@ -24,6 +24,7 @@ export const createUserProject = function(name){
 };
 
 export const createUserTodo = function(event){
+    domNodes.todoDialog.close();
     let isTodoValid = true;
     let input = getUserInput();
     let createdTodo = todoManager.createNewTodo(input);
