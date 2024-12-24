@@ -26,7 +26,7 @@ export const formHandling = (function(){
 
     function clearTodoForm(){
         for (let control in todoFormControls){
-            if (control == 'urgentRadio' || control == 'importantRadio' || control == 'lowImportance'){
+            if (control == 'urgentRadio' || control == 'importantRadio' || control == 'lowImportanceRadio'){
                 todoFormControls[control].checked = false;
             }
             else if (control == 'notStartedRadio' || control == 'inProgressRadio' || control == 'completedRadio'){
