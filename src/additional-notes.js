@@ -1,5 +1,7 @@
 import { todoFormControls } from './cached-dom.js'
 
+export let userNote = null;
+
 todoFormControls.notesBtn.addEventListener('click', displayInput);
 todoFormControls.notesCancelBtn.addEventListener('click', closeNotes);
 todoFormControls.notesConfirmBtn.addEventListener('click', submitNotes);
@@ -15,7 +17,7 @@ function closeNotes(event){
 }
 
 function submitNotes(event){
-    let userNote = todoFormControls.notesTxt.value;
+    userNote = todoFormControls.notesTxt.value;
     console.log(userNote);
     closeNotes(event);
 }
