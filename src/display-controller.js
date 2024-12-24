@@ -1,5 +1,7 @@
 import { displayNodes } from './cached-dom';
 import { userProjects } from './project-manager.js'
+import { priorityColor } from './todo-color.js';
+import './task-styles.css'
 
 export function updateDisplay(){
     displayNodes.projectsDiv.innerHTML = '';
@@ -29,6 +31,8 @@ export function updateDisplay(){
             todoDiv.appendChild(dueDatepara);
 
             projectDiv.appendChild(todoDiv);
+            todoDiv.classList.toggle('taskDiv');
+            priorityColor(todo, todoDiv);
         }
         displayNodes.projectsDiv.appendChild(projectDiv);
     }

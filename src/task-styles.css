@@ -1,0 +1,13 @@
+.taskDiv{
+    border: 1px solid blue;
+}
+
+.lowImportance{
+    background-color: #38bdf8;
+}
+.important{
+    background-color: #fcd34d;
+}
+.urgent{
+    background-color: #f87171;
+}
