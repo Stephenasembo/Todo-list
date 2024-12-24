@@ -80,6 +80,19 @@ export default (function(){
         })
     }
 
+    function editTodo(event){
+        alert('hello my id is: ' + event.target.id);
+    }
+
+    function addEditTodoBtns(){
+        let editTodoBtns = document.querySelectorAll('.editTodo');
+        editTodoBtns = Array.from(editTodoBtns);
+        console.log(editTodoBtns);
+        editTodoBtns.forEach((btn) => {
+            btn.addEventListener('click', editTodo);
+        })
+    }
+
     return{
         createNewTodo,
         changeStatus,
@@ -87,5 +100,6 @@ export default (function(){
         deleteTodo,
         addDeleteBtns,
         addExpandTodoBtns,
+        addEditTodoBtns,
     }
 })();

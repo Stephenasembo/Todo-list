@@ -18,3 +18,4 @@ updateDisplay();
 projectManager.addDeleteBtns();
 todoManager.addDeleteBtns();
 todoManager.addExpandTodoBtns();
+todoManager.addEditTodoBtns();

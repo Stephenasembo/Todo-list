@@ -31,12 +31,18 @@ export function updateDisplay(){
             expandTodoBtn.setAttribute('class', 'expandTodo');
             expandTodoBtn.setAttribute('id', todo.title);
 
+            const editTodoBtn = document.createElement('button');
+            editTodoBtn.textContent = 'Edit Todo';
+            editTodoBtn.setAttribute('class', 'editTodo');
+            editTodoBtn.setAttribute('id', todo.title);
+
             titlePara.textContent = todo.title;
             priorityPara.textContent = todo.priority;
             dueDatepara.textContent = todo.dueDate;
 
             todoDiv.appendChild(titlePara);
             todoDiv.appendChild(expandTodoBtn);
+            todoDiv.appendChild(editTodoBtn);
             todoDiv.appendChild(deleteTodoBtn);
             todoDiv.appendChild(priorityPara);
             todoDiv.appendChild(dueDatepara);
