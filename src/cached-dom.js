@@ -11,7 +11,7 @@ const projectNameInput = document.querySelector('#projectName')
 const titleInput = document.querySelector('#title');
 const desciptionInput = document.querySelector('#description');
 const dueDateInput = document.querySelector('#dueDate');
-const notesInput = document.querySelector('#notes');
+const notesBtn = document.querySelector('#notesBtn');
 
 const urgentRadio = document.querySelector('#urgent');
 const importantRadio = document.querySelector('#important');
@@ -35,7 +35,7 @@ export const todoFormControls = {
     titleInput,
     desciptionInput,
     dueDateInput,
-    notesInput,
+    notesBtn,
     todoCancelBtn,
     todoConfirmBtn,
     urgentRadio,

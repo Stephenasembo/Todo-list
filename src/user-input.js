@@ -15,7 +15,6 @@ const getTodoValues = function(){
     let description = todoFormControls.desciptionInput.value;
     let dueDate = todoFormControls.dueDateInput.value;
     let priority = null;
-    let notes = todoFormControls.notesInput.value;
     let status = null;
 
     if (dueDate){
@@ -55,7 +54,6 @@ const getTodoValues = function(){
         description,
         dueDate,
         priority,
-        notes,
         status
     }
 }
