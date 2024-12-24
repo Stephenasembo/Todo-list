@@ -52,7 +52,7 @@ export default (function(){
     }
 
     function addExpandTodoBtns(){
-        let expandTodoBtns = document.querySelectorAll('.deleteTodo');
+        let expandTodoBtns = document.querySelectorAll('.expandTodo');
         expandTodoBtns = Array.from(expandTodoBtns);
         console.log(expandTodoBtns);
         expandTodoBtns.forEach((btn) => {
@@ -66,5 +66,6 @@ export default (function(){
         changePriority,
         deleteTodo,
         addDeleteBtns,
+        addExpandTodoBtns,
     }
 })();
