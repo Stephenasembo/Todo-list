@@ -1,3 +1,7 @@
+import { updateDisplay } from "./display-controller";
+import { retrieveUserProjects, saveUserProjects } from "./local-storage";
+import { projectManager } from "./project-manager";
+
 export default (function(){
     function createNewTodo(obj){
         return {
@@ -18,8 +22,20 @@ export default (function(){
         todo.priority = newPriority;
     }
 
-    function deleteTodo(todo){
-        todo = null;
+    function deleteTodo(event){
+        let projectIndex = 0;
+        let createdProjectsArr = retrieveUserProjects();
+        for (let createdProject of createdProjectsArr){
+            let todoIndex = createdProject.todos.findIndex((todo) => {
+                return todo.title == event.target.id;
+            })
+            if (todoIndex != -1){
+                projectManager.removeTodo(projectIndex, todoIndex)
+                break;
+            }
+            projectIndex+=1;
+        }
+        addDeleteBtns();
     }
 
     function addDeleteBtns(){
@@ -27,7 +43,7 @@ export default (function(){
         deleteTodoBtns = Array.from(deleteTodoBtns);
         console.log(deleteTodoBtns);
         deleteTodoBtns.forEach((btn) => {
-            btn.addEventListener('click', deleteTodo)
+            btn.addEventListener('click', deleteTodo);
         })
     }    
 
@@ -36,5 +52,6 @@ export default (function(){
         changeStatus,
         changePriority,
         deleteTodo,
+        addDeleteBtns,
     }
 })();

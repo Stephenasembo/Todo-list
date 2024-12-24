@@ -1,6 +1,7 @@
 import { userProjects } from './project-manager.js'
 import { displayAvailableProjects, updateDisplay } from './display-controller.js'
 import { projectManager } from './project-manager.js';
+import todoManager from './todoManager.js'
 
 export function pickProject(createdTodo){
     let projectBtns = displayAvailableProjects();
@@ -19,5 +20,6 @@ export function pickProject(createdTodo){
         projectManager.addTodo(pickedProject, createdTodo);
         console.log(userProjects)
         updateDisplay();
+        todoManager.addDeleteBtns();
     }
 }

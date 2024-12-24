@@ -16,3 +16,4 @@ if (createdProjectsArr.length < 1){
 }
 updateDisplay();
 projectManager.addDeleteBtns();
+todoManager.addDeleteBtns();

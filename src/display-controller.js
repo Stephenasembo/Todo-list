@@ -24,6 +24,7 @@ export function updateDisplay(){
             const deleteTodoBtn = document.createElement('button');
             deleteTodoBtn.textContent = 'Delete Todo';
             deleteTodoBtn.setAttribute('class', 'deleteTodo');
+            deleteTodoBtn.setAttribute('id', todo.title);
 
             titlePara.textContent = todo.title;
             priorityPara.textContent = todo.priority;

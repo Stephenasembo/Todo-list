@@ -73,8 +73,11 @@ const projectManager = (function(){
         })
     }
 
-    function removeTodo(project, todo){
-        project.todos.pop(todo);
+    function removeTodo(projectIndex, todoIndex){
+        userProjects = retrieveUserProjects();
+        userProjects[projectIndex].todos.splice(todoIndex, 1);
+        saveUserProjects();
+        updateDisplay();
     }
 
     return {
