@@ -78,3 +78,36 @@ export function displayAvailableProjects(){
         btnArray,
     }
 }
+
+export function displayTodoDetails(todo){
+    const todoDetailsDialog = document.createElement('dialog');
+    todoDetailsDialog.classList.toggle('todoDetailsDialog');
+    const todoDetailsDiv = document.createElement('div');
+    let titleHeading = document.createElement('h2');
+    let descriptionPara = document.createElement('p');
+    let priorityLevel = document.createElement('p');
+    let statusPara = document.createElement('p');
+    let notesPara = document.createElement('p');
+    let dueDatePara = document.createElement('p');
+    let detailsCloseBtn = document.createElement('button');
+
+    titleHeading.textContent = todo.title;
+    descriptionPara.textContent = todo.description;
+    priorityLevel.textContent = `This task has a priority level of ${todo.priority}`;
+    statusPara.textContent = `The status of this task is ${todo.status}`;
+    notesPara.textContent = todo.notes;
+    dueDatePara.textContent = todo.dueDate;
+    detailsCloseBtn.textContent = 'Close';
+
+    todoDetailsDiv.appendChild(titleHeading);
+    todoDetailsDiv.appendChild(descriptionPara);
+    todoDetailsDiv.appendChild(priorityLevel);
+    todoDetailsDiv.appendChild(statusPara);
+    todoDetailsDiv.appendChild(notesPara);
+    todoDetailsDiv.appendChild(dueDatePara);
+    todoDetailsDiv.appendChild(detailsCloseBtn);
+
+    todoDetailsDialog.appendChild(todoDetailsDiv);
+    displayNodes.projectsDiv.appendChild(todoDetailsDialog);
+    todoDetailsDialog.setAttribute('open', 'true');
+}
