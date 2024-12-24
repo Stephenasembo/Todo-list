@@ -9,8 +9,25 @@ export function cacheEditBtns(){
 
 function editInput(event){
     let selectedInput = event.target.id;
-    if (selectedInput == 'title'){
-        editTitle();
+    switch(selectedInput){
+        case 'title':
+            editTitle();
+            break;
+        case 'description':
+            editDescription();
+            break;
+        case 'dueDate':
+            editDueDate();
+            break;
+        case 'priority':
+            editPriority();
+            break;
+        case 'status':
+            editStatus();
+            break;
+        case 'notes':
+            editNotes();
+            break;                                            
     }
 }
 
@@ -20,22 +37,23 @@ function editTitle(){
 }
 function editDescription(){
     displayInputEdit('description');
+    openDialog();
 }
 function editDueDate(){
     displayInputEdit('due date');
-
+    openDialog();
 }
 function editPriority(){
     displayInputEdit('priority level');
-
+    openDialog();
 }
 function editStatus(){
     displayInputEdit('task status');
-
+    openDialog();
 }
 function editNotes(){
     displayInputEdit('additional note');
-
+    openDialog();
 }
 
 function openDialog(){

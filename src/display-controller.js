@@ -179,12 +179,47 @@ function createInput(input){
             break;
 
         case 'priority level':
+            element = document.createElement('p');
+            element.innerHTML = `                <p>
+                    Priority Level: 
+                    <span>
+                        <input type="radio" value="lowImportance" id="lowImportance" name="priority">
+                        <label for="lowImportance">Low Importance</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="important" id="important" name="priority">
+                        <label for="important">Important</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="urgent" id="urgent" name="priority" required>
+                        <label for="urgent">Urgent</label>
+                    </span>
+                </p>
+`
             break;
 
         case 'task status':
+            element = document.createElement('p');
+            element.innerHTML = `                <p>
+                    Task Status: 
+                    <span>
+                        <input type="radio" value="notStarted" id="notStarted" name="taskStatus">
+                        <label for="notStarted">Not started</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="inProgress" id="inProgress" name="taskStatus">
+                        <label for="inProgress">In progress</label>
+                    </span>
+                    <span>
+                        <input type="radio" value="completed" id="completed" name="taskStatus" required>
+                        <label for="completed">Completed</label>
+                    </span>
+                </p>
+`
             break;
 
         case 'additional note':
+            element = document.createElement('textarea');
             break;
     }
     return element;
