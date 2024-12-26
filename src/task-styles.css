@@ -1,5 +1,7 @@
 .taskDiv{
-    border: 1px solid blue;
+    border: 1px solid black;
+    padding: 5px;
+    padding-left: 10px;
 }
 
 .lowImportance{
