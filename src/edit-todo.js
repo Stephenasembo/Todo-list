@@ -1,17 +1,22 @@
 import { displayInputEdit, removeDialog } from "./display-controller";
+import { projectManager } from './project-manager.js'
 
 let inputEditDialog = null;
 let closeEdit = null;
 let confirmEdit = null;
 let obj = null;
 let selectedProperty = null;
+let selectedProjectIndex = null;
+let selectedTodoIndex = null;
 
-export function cacheEditBtns(todo){
+export function cacheEditBtns(projectIndex, todoIndex, todo){
     let inputBtnArr = document.querySelectorAll('.todoInput');
     inputBtnArr.forEach((btn) => {
         btn.addEventListener('click', editInput);
     })
     obj = todo;
+    selectedProjectIndex = projectIndex;
+    selectedTodoIndex = todoIndex;
 }
 
 function editInput(event){
@@ -107,5 +112,5 @@ function submitEdit(){
     let newValue = inputEditElement.value;
     removeDialog(inputEditDialog);
     obj[selectedProperty] = newValue;
-    console.log(obj)
+    projectManager.updateTodo(selectedProjectIndex, selectedTodoIndex, obj);
 }

@@ -84,9 +84,10 @@ export default (function(){
     function editTodo(event){
         let projectIndex = 0;
         let chosenTodo = null;
+        let todoIndex = 0;
         let createdProjectsArr = retrieveUserProjects();
         for (let createdProject of createdProjectsArr){
-            let todoIndex = createdProject.todos.findIndex((todo) => {
+            todoIndex = createdProject.todos.findIndex((todo) => {
                 return todo.title == event.target.id;
             })
             if(todoIndex != -1){
@@ -104,7 +105,7 @@ export default (function(){
         function closeEdit(){
             editDialog.close();
         }
-        cacheEditBtns(chosenTodo);
+        cacheEditBtns(projectIndex, todoIndex, chosenTodo);
     }
 
     function addEditTodoBtns(){

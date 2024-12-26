@@ -80,12 +80,19 @@ const projectManager = (function(){
         updateDisplay();
     }
 
+    function updateTodo(projectIndex, todoIndex, todoObj){
+        userProjects = retrieveUserProjects();
+        userProjects[projectIndex].todos[todoIndex] = todoObj;
+        saveUserProjects();
+    }
+
     return {
         createNewProject,
         deleteProject,
         addTodo,
         removeTodo,
         addDeleteBtns,
+        updateTodo,
     }
 })()
 
