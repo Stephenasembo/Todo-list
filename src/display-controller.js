@@ -37,8 +37,15 @@ export function updateDisplay(){
             editTodoBtn.setAttribute('id', todo.title);
 
             titlePara.textContent = todo.title;
-            priorityPara.textContent = todo.priority;
-            dueDatepara.textContent = todo.dueDate;
+            let priorityLvl = null;
+            if (todo.priority == 'lowImportance'){
+                priorityLvl = 'low importance';
+            }
+            else {
+                priorityLvl = todo.priority
+            }
+            priorityPara.textContent = `Priority level: ${priorityLvl}`;
+            dueDatepara.textContent = `Due Date: ${todo.dueDate}`;
 
             todoDiv.appendChild(titlePara);
             todoDiv.appendChild(expandTodoBtn);
