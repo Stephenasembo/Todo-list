@@ -97,12 +97,14 @@ export function displayTodoDetails(todo){
     let dueDatePara = document.createElement('p');
     let detailsCloseBtn = document.createElement('button');
 
+    fixDisplayText(todo);
     titleHeading.textContent = todo.title;
     descriptionPara.textContent = todo.description;
     priorityLevel.textContent = `This task has a priority level of ${todo.priority}`;
-    statusPara.textContent = `The status of this task is ${todo.status}`;
+    fixDisplayText(todo);
+    statusPara.textContent = `This task is ${todo.status}`;
     notesPara.textContent = todo.notes;
-    dueDatePara.textContent = todo.dueDate;
+    dueDatePara.textContent = `Due Date: ${todo.dueDate}`;
     detailsCloseBtn.textContent = 'Close';
 
     todoDetailsDiv.appendChild(titleHeading);
@@ -117,6 +119,18 @@ export function displayTodoDetails(todo){
     todoDetailsDialog.appendChild(todoDetailsDiv);
     displayNodes.projectsDiv.appendChild(todoDetailsDialog);
     todoDetailsDialog.classList.toggle('detailsDialog');
+}
+
+function fixDisplayText(todo){
+    if (todo.priority == 'lowImportance'){
+        todo.priority = 'low importance';
+    }
+    else if(todo.status == 'notStarted'){
+        todo.status = 'not started';
+    }
+    else if (todo.status == 'inProgress'){
+        todo.status = 'in progress';
+    }
 }
 
 export function displayEditableContent(todo){
