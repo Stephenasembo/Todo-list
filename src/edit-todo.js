@@ -63,15 +63,13 @@ function editNotes(){
 function openDialog(){
     inputEditDialog = document.querySelector('.inputDialog');
     inputEditDialog.showModal();
-    dialogOpen = true;
-    if(dialogOpen){
-        addEventListeners();
-    }
+    addEventListeners();
 }
 
 function closeDialog(event){
     event.preventDefault();
     inputEditDialog.close();
+    removeDialog(inputEditDialog);
 }
 
 function addEventListeners(){
@@ -82,5 +80,6 @@ function addEventListeners(){
 }
 
 function submitEdit(){
+    removeDialog(inputEditDialog);
 
 }
