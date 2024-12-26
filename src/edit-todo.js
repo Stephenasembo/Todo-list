@@ -1,4 +1,8 @@
-import { displayInputEdit } from "./display-controller";
+import { displayInputEdit, removeDialog } from "./display-controller";
+
+let inputEditDialog = null;
+let closeEdit = null;
+let confirmEdit = null;
 
 export function cacheEditBtns(){
     let inputBtnArr = document.querySelectorAll('.todoInput');
@@ -57,6 +61,26 @@ function editNotes(){
 }
 
 function openDialog(){
-    const inputEditDialog = document.querySelector('.inputDialog');
+    inputEditDialog = document.querySelector('.inputDialog');
     inputEditDialog.showModal();
+    dialogOpen = true;
+    if(dialogOpen){
+        addEventListeners();
+    }
+}
+
+function closeDialog(event){
+    event.preventDefault();
+    inputEditDialog.close();
+}
+
+function addEventListeners(){
+    closeEdit = document.querySelector('#closeEditForm');
+    closeEdit.addEventListener('click', closeDialog);
+    confirmEdit = document.querySelector('#confirmEditForm');
+    confirmEdit.addEventListener('click', submitEdit);
+}
+
+function submitEdit(){
+
 }
