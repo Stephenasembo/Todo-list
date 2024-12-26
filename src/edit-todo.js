@@ -1,3 +1,4 @@
+import { setDateMin } from "./date-constraint.js";
 import { displayInputEdit, removeDialog } from "./display-controller";
 import { projectManager } from './project-manager.js'
 import { format } from 'date-fns';
@@ -84,6 +85,11 @@ function openDialog(){
     inputEditDialog = document.querySelector('.inputDialog');
     inputEditDialog.showModal();
     addEventListeners();
+    let element = document.querySelector('.inputEditElement');
+    if ('element[type="datetime-local"]'){
+        let minimumDate = setDateMin();
+        element.setAttribute('min', minimumDate);
+    }
 }
 
 function closeDialog(event){
