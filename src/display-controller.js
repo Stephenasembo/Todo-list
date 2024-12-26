@@ -144,21 +144,26 @@ export function displayInputEdit(input){
     const inputDialog = document.createElement('dialog');
     const infoPara = document.createElement('p');
     infoPara.textContent = `Enter updated value for the ${input}`;
-    const btnPara = document.createElement('p');
-    const cancelBtn = document.createElement('button');
-    const confirmBtn = document.createElement('button');
-    cancelBtn.textContent = 'Cancel';
-    confirmBtn.textContent = 'Confirm';
-    btnPara.appendChild(cancelBtn);
-    btnPara.appendChild(confirmBtn);
+
     const formEdit = document.createElement('form');
     formEdit.setAttribute('method', 'dialog');
-    const inputPara = document.createElement('div');
+    const inputPara = document.createElement('p');
     let createdInput = createInput(input);
+    
+    const formBtnPara = document.createElement('p');
+    const cancelFormBtn = document.createElement('button');
+    const confirmFormBtn = document.createElement('button');
+    cancelFormBtn.textContent = 'Close';
+    confirmFormBtn.textContent = 'Confirm';
+    cancelFormBtn.setAttribute('id', 'closeEditForm');
+    confirmFormBtn.setAttribute('id', 'confirmEditForm');
+
     inputPara.appendChild(createdInput);
+    formBtnPara.appendChild(cancelFormBtn);
+    formBtnPara.appendChild(confirmFormBtn);
 
     formEdit.appendChild(inputPara);
-    formEdit.appendChild(btnPara);
+    formEdit.appendChild(formBtnPara);
 
     inputDialog.appendChild(infoPara);
     inputDialog.appendChild(formEdit);
@@ -223,4 +228,8 @@ function createInput(input){
             break;
     }
     return element;
+}
+
+export function removeDialog(dialog){
+    displayNodes.projectsDiv.removeChild(dialog);
 }
