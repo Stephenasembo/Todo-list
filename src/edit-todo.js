@@ -86,7 +86,7 @@ function openDialog(){
     inputEditDialog.showModal();
     addEventListeners();
     let element = document.querySelector('.inputEditElement');
-    if ('element[type="datetime-local"]'){
+    if (element.type =="datetime-local"){
         let minimumDate = setDateMin();
         element.setAttribute('min', minimumDate);
     }
