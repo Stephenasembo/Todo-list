@@ -1,5 +1,6 @@
 import { displayInputEdit, removeDialog } from "./display-controller";
 import { projectManager } from './project-manager.js'
+import { format } from 'date-fns';
 
 let inputEditDialog = null;
 let closeEdit = null;
@@ -110,6 +111,9 @@ function submitEdit(){
         inputEditElement = document.querySelector('.inputEditElement');
     }
     let newValue = inputEditElement.value;
+    if (selectedProperty == 'dueDate'){
+        newValue = format(newValue, "p 'on' PPPP");
+    }
     removeDialog(inputEditDialog);
     obj[selectedProperty] = newValue;
     projectManager.updateTodo(selectedProjectIndex, selectedTodoIndex, obj);
