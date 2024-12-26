@@ -83,13 +83,14 @@ export default (function(){
 
     function editTodo(event){
         let projectIndex = 0;
+        let chosenTodo = null;
         let createdProjectsArr = retrieveUserProjects();
         for (let createdProject of createdProjectsArr){
             let todoIndex = createdProject.todos.findIndex((todo) => {
                 return todo.title == event.target.id;
             })
             if(todoIndex != -1){
-                let chosenTodo = createdProjectsArr[projectIndex].todos[todoIndex];
+                chosenTodo = createdProjectsArr[projectIndex].todos[todoIndex];
                 console.log(chosenTodo);
                 displayEditableContent(chosenTodo);        
                 break;
@@ -103,7 +104,7 @@ export default (function(){
         function closeEdit(){
             editDialog.close();
         }
-        cacheEditBtns();
+        cacheEditBtns(chosenTodo);
     }
 
     function addEditTodoBtns(){

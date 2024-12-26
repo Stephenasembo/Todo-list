@@ -3,12 +3,15 @@ import { displayInputEdit, removeDialog } from "./display-controller";
 let inputEditDialog = null;
 let closeEdit = null;
 let confirmEdit = null;
+let obj = null;
+let selectedProperty = null;
 
-export function cacheEditBtns(){
+export function cacheEditBtns(todo){
     let inputBtnArr = document.querySelectorAll('.todoInput');
     inputBtnArr.forEach((btn) => {
         btn.addEventListener('click', editInput);
     })
+    obj = todo;
 }
 
 function editInput(event){
@@ -38,26 +41,37 @@ function editInput(event){
 function editTitle(){
     displayInputEdit('title');
     openDialog();
+    selectedProperty = 'title';
 }
 function editDescription(){
     displayInputEdit('description');
     openDialog();
+    selectedProperty = 'description';
+
 }
 function editDueDate(){
     displayInputEdit('due date');
     openDialog();
+    selectedProperty = 'dueDate';
+
 }
 function editPriority(){
     displayInputEdit('priority level');
     openDialog();
+    selectedProperty = 'priority';
+
 }
 function editStatus(){
     displayInputEdit('task status');
     openDialog();
+    selectedProperty = 'status';
+
 }
 function editNotes(){
     displayInputEdit('additional note');
     openDialog();
+    selectedProperty = 'notes';
+
 }
 
 function openDialog(){
@@ -83,5 +97,5 @@ function submitEdit(){
     let inputEditElement = document.querySelector('.inputEditElement');
     let newValue = inputEditElement.value;
     removeDialog(inputEditDialog);
-    console.log(`New Updated value is ${newValue}`);
+    obj[selectedProperty] = newValue;
 }
