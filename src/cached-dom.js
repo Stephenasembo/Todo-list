@@ -18,6 +18,8 @@ const notesDialog = document.querySelector('#notesDialog');
 const notesCancelBtn = document.querySelector('#notesCancel');
 const notesConfirmBtn = document.querySelector('#notesConfirm');
 const notesTxt = document.querySelector('#notesTxt');
+notesTxt.setAttribute('rows', 5);
+notesTxt.setAttribute('cols', 30);
 
 const urgentRadio = document.querySelector('#urgent');
 const importantRadio = document.querySelector('#important');

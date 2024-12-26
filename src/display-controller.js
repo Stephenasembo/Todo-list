@@ -254,6 +254,8 @@ function createInput(input){
 
         case 'additional note':
             element = document.createElement('textarea');
+            element.setAttribute('rows', 7);
+            element.setAttribute('cols', 40);
             break;
     }
     element.classList.toggle('inputEditElement')
