@@ -5,7 +5,7 @@ import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
 import { defaultProject } from './index.js';
 import { pickProject } from './choose-project.js';
-import { updateDisplay } from './display-controller.js'
+import { displayCreatedProjects, updateDisplay } from './display-controller.js'
 
 export const createUserProject = function(name){
     if(typeof(name) == 'string'){
@@ -19,6 +19,7 @@ export const createUserProject = function(name){
         }
         const newProject = projectManager.createNewProject(input);
         updateDisplay();
+        displayCreatedProjects();
     }
     projectManager.addDeleteBtns();
 };

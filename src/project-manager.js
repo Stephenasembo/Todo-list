@@ -1,4 +1,4 @@
-import { updateDisplay } from './display-controller.js';
+import { displayCreatedProjects, updateDisplay } from './display-controller.js';
 import { saveUserProjects, retrieveUserProjects } from './local-storage.js'
 import todoManager from './todoManager.js'
 
@@ -51,6 +51,7 @@ const projectManager = (function(){
         userProjects.splice(projectIndex, 1);
         saveUserProjects();
         updateDisplay();
+        displayCreatedProjects();
         addDeleteBtns();
     }
 

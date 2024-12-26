@@ -255,3 +255,19 @@ function createInput(input){
 export function removeDialog(dialog){
     displayNodes.projectsDiv.removeChild(dialog);
 }
+
+export function displayCreatedProjects(){
+    displayNodes.createdProjectsDiv.innerHTML = `<h2>YOUR PROJECTS</h2>`;
+
+    for (let project of userProjects){
+        const projectDiv = document.createElement('div');
+        const heading = document.createElement('h2');
+        heading.textContent = `${project.name}`;
+        const tasksPara = document.createElement('p');
+        tasksPara.textContent = `${project.name} has ${project.todos.length} tasks`;
+
+        projectDiv.appendChild(heading);
+        projectDiv.appendChild(tasksPara);
+        displayNodes.createdProjectsDiv.appendChild(projectDiv);
+    }
+}

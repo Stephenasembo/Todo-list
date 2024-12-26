@@ -4,7 +4,7 @@ import { getUserInput } from './user-input.js';
 import { formHandling } from './form-manipulation.js';
 import { createUserProject, createUserTodo } from './create-entries.js';
 import './styles.css';
-import { displayProjects } from './display-controller.js';
+import { displayCreatedProjects, displayProjects } from './display-controller.js';
 import './date-constraint.js';
 import { updateDisplay } from './display-controller.js'
 import { retrieveUserProjects } from './local-storage.js';
@@ -19,3 +19,4 @@ projectManager.addDeleteBtns();
 todoManager.addDeleteBtns();
 todoManager.addExpandTodoBtns();
 todoManager.addEditTodoBtns();
+displayCreatedProjects();

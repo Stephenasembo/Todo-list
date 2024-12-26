@@ -6,6 +6,7 @@ const projectCancelBtn = document.querySelector('#projectCancel');
 const projectConfirmBtn = document.querySelector('#projectConfirm');
 const todoDialog = document.querySelector('#todoDialog')
 const projectDialog = document.querySelector('#projectDialog')
+const createdProjectsDiv = document.querySelector('#createdProjects');
 
 const projectNameInput = document.querySelector('#projectName')
 const titleInput = document.querySelector('#title');
@@ -64,4 +65,5 @@ export const projectFormControls = {
 
 export const displayNodes = {
     projectsDiv,
+    createdProjectsDiv,
 }
