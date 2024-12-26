@@ -1,5 +1,6 @@
 import { updateDisplay } from './display-controller.js';
 import { saveUserProjects, retrieveUserProjects } from './local-storage.js'
+import todoManager from './todoManager.js'
 
 export let userProjects;
 if('userProjects' in localStorage){
@@ -85,6 +86,10 @@ const projectManager = (function(){
         userProjects[projectIndex].todos[todoIndex] = todoObj;
         saveUserProjects();
         updateDisplay();
+        addDeleteBtns();
+        todoManager.addExpandTodoBtns();
+        todoManager.addEditTodoBtns();
+        todoManager.addDeleteBtns();
     }
 
     return {

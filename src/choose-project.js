@@ -21,6 +21,7 @@ export function pickProject(createdTodo){
         console.log(userProjects)
         updateDisplay();
         todoManager.addDeleteBtns();
+        todoManager.addEditTodoBtns();
         todoManager.addExpandTodoBtns();
     }
 }
