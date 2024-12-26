@@ -2,6 +2,8 @@
     border: 1px solid black;
     padding: 5px;
     padding-left: 10px;
+    border-radius: 16px;
+    margin-bottom: 5px;
 }
 
 .lowImportance{
@@ -12,4 +14,8 @@
 }
 .urgent{
     background-color: #f87171;
+}
+
+.taskDiv span {
+    font-weight: 700;
 }

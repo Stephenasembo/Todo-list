@@ -7,20 +7,26 @@ export function updateDisplay(){
     displayNodes.projectsDiv.innerHTML = '';
     for (let project of userProjects){
         const projectDiv = document.createElement('div');
+        const projectHead = document.createElement('div');
         const projectDeleteBtn = document.createElement('button');
         projectDeleteBtn.textContent = 'Delete Project';
         projectDeleteBtn.classList.toggle('deleteProject');
         projectDeleteBtn.setAttribute('id', project.name);
         const heading = document.createElement('h2');
         heading.textContent = project.name;
-        projectDiv.appendChild(heading);
-        projectDiv.appendChild(projectDeleteBtn);
+        projectHead.appendChild(heading);
+        projectHead.appendChild(projectDeleteBtn);
+
+        projectDiv.appendChild(projectHead);
+        projectHead.classList.toggle('projectHead');
 
         for (let todo of (project.todos)){
             const todoDiv = document.createElement('div');
             const titleHeading = document.createElement('h3');
             const priorityPara = document.createElement('p');
             const dueDatepara = document.createElement('p');
+            const btnPara = document.createElement('p');
+
             const deleteTodoBtn = document.createElement('button');
             deleteTodoBtn.textContent = 'Delete Todo';
             deleteTodoBtn.setAttribute('class', 'deleteTodo');
@@ -36,6 +42,10 @@ export function updateDisplay(){
             editTodoBtn.setAttribute('class', 'editTodo');
             editTodoBtn.setAttribute('id', todo.title);
 
+            btnPara.appendChild(expandTodoBtn);
+            btnPara.appendChild(editTodoBtn);
+            btnPara.appendChild(deleteTodoBtn);
+
             titleHeading.textContent = todo.title;
             let priorityLvl = null;
             if (todo.priority == 'lowImportance'){
@@ -44,13 +54,11 @@ export function updateDisplay(){
             else {
                 priorityLvl = todo.priority
             }
-            priorityPara.textContent = `Priority level: ${priorityLvl}`;
-            dueDatepara.textContent = `Due Date: ${todo.dueDate}`;
+            priorityPara.innerHTML = `<span>Priority level:</span> ${priorityLvl}.`;
+            dueDatepara.innerHTML = `<span>Due Date:</span> ${todo.dueDate}`;
 
             todoDiv.appendChild(titleHeading);
-            todoDiv.appendChild(expandTodoBtn);
-            todoDiv.appendChild(editTodoBtn);
-            todoDiv.appendChild(deleteTodoBtn);
+            todoDiv.appendChild(btnPara);
             todoDiv.appendChild(priorityPara);
             todoDiv.appendChild(dueDatepara);
 

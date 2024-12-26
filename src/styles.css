@@ -5,15 +5,16 @@ html{
 body{
     height: 98%;
     font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.5;
 }
 
 .sidebar {
-    background-color: grey;
+    background-color: #2dd4bf;
 }
 
 .profileimg {
     border-radius: 50%;
-    background-color: hotpink;
+    background-color: #d1fae5;
 }
 
 #container {
@@ -37,4 +38,37 @@ button {
     border-radius: 8px;
     margin-right: 5px;
     margin-bottom: 5px;
+}
+
+.projectHead {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+}
+
+.projectHead > button {
+    height: min-content;
+    align-self: center;
+}
+
+.projectHead > h2 {
+    text-align: center;
+}
+
+.profile {
+    display: grid;
+    grid-template-columns: 60px max-content;
+}
+
+.profile > span {
+    align-self: center;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+#createdProjects > h2 {
+    text-decoration: underline;
+}
+
+.projects > div{
+    margin-left: 10px;
 }
