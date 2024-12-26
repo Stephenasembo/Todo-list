@@ -85,7 +85,7 @@ export function displayAvailableProjects(){
     projectsForm.appendChild(btnPara);
 
     displayNodes.projectsDiv.appendChild(projectsDialog);
-    projectsDialog.setAttribute('open', 'true');
+    projectsDialog.setAttribute('class', 'availableProjectsDialog');
 
     return{
         btnArray,
