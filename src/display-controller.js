@@ -149,7 +149,7 @@ export function displayInputEdit(input){
     formEdit.setAttribute('method', 'dialog');
     const inputPara = document.createElement('p');
     let createdInput = createInput(input);
-    
+
     const formBtnPara = document.createElement('p');
     const cancelFormBtn = document.createElement('button');
     const confirmFormBtn = document.createElement('button');
@@ -227,6 +227,7 @@ function createInput(input){
             element = document.createElement('textarea');
             break;
     }
+    element.classList.toggle('inputEditElement')
     return element;
 }
 

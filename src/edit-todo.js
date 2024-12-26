@@ -80,6 +80,8 @@ function addEventListeners(){
 }
 
 function submitEdit(){
+    let inputEditElement = document.querySelector('.inputEditElement');
+    let newValue = inputEditElement.value;
     removeDialog(inputEditDialog);
-
+    console.log(`New Updated value is ${newValue}`);
 }
