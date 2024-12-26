@@ -18,7 +18,7 @@ export function updateDisplay(){
 
         for (let todo of (project.todos)){
             const todoDiv = document.createElement('div');
-            const titlePara = document.createElement('p');
+            const titleHeading = document.createElement('h3');
             const priorityPara = document.createElement('p');
             const dueDatepara = document.createElement('p');
             const deleteTodoBtn = document.createElement('button');
@@ -36,7 +36,7 @@ export function updateDisplay(){
             editTodoBtn.setAttribute('class', 'editTodo');
             editTodoBtn.setAttribute('id', todo.title);
 
-            titlePara.textContent = todo.title;
+            titleHeading.textContent = todo.title;
             let priorityLvl = null;
             if (todo.priority == 'lowImportance'){
                 priorityLvl = 'low importance';
@@ -47,7 +47,7 @@ export function updateDisplay(){
             priorityPara.textContent = `Priority level: ${priorityLvl}`;
             dueDatepara.textContent = `Due Date: ${todo.dueDate}`;
 
-            todoDiv.appendChild(titlePara);
+            todoDiv.appendChild(titleHeading);
             todoDiv.appendChild(expandTodoBtn);
             todoDiv.appendChild(editTodoBtn);
             todoDiv.appendChild(deleteTodoBtn);
