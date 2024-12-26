@@ -94,8 +94,18 @@ function addEventListeners(){
 }
 
 function submitEdit(){
-    let inputEditElement = document.querySelector('.inputEditElement');
+    let inputEditElement = null;
+    if (selectedProperty == 'priority'){
+        inputEditElement = document.querySelector('input[type="radio"]:checked');
+    }
+    else if (selectedProperty == 'status'){
+        inputEditElement = document.querySelector('input[type="radio"]:checked');   
+    }
+    else {
+        inputEditElement = document.querySelector('.inputEditElement');
+    }
     let newValue = inputEditElement.value;
     removeDialog(inputEditDialog);
     obj[selectedProperty] = newValue;
+    console.log(obj)
 }
