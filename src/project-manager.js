@@ -80,6 +80,7 @@ const projectManager = (function(){
         userProjects[projectIndex].todos.splice(todoIndex, 1);
         saveUserProjects();
         updateDisplay();
+        displayCreatedProjects();
     }
 
     function updateTodo(projectIndex, todoIndex, todoObj){
