@@ -86,6 +86,7 @@ function openDialog(){
     inputEditDialog.showModal();
     addEventListeners();
     let element = document.querySelector('.inputEditElement');
+    element.required = true;
     if (element.type =="datetime-local"){
         let minimumDate = setDateMin();
         element.setAttribute('min', minimumDate);
@@ -109,14 +110,23 @@ function submitEdit(){
     let inputEditElement = null;
     if (selectedProperty == 'priority'){
         inputEditElement = document.querySelector('input[type="radio"]:checked');
+        if (!inputEditElement){
+            return
+        }
     }
     else if (selectedProperty == 'status'){
-        inputEditElement = document.querySelector('input[type="radio"]:checked');   
+        inputEditElement = document.querySelector('input[type="radio"]:checked');  
+        if (!inputEditElement){
+            return
+        } 
     }
     else {
         inputEditElement = document.querySelector('.inputEditElement');
     }
     let newValue = inputEditElement.value;
+    if(!newValue){
+        return;
+    }
     if (selectedProperty == 'dueDate'){
         newValue = format(newValue, "p 'on' PPPP");
     }
