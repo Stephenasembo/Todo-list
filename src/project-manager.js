@@ -84,6 +84,7 @@ const projectManager = (function(){
         userProjects = retrieveUserProjects();
         userProjects[projectIndex].todos[todoIndex] = todoObj;
         saveUserProjects();
+        updateDisplay();
     }
 
     return {
