@@ -1,9 +1,9 @@
-import { todoFormControls, projectFormControls, domNodes } from './cached-dom.js';
-import { projectManager } from './project-manager.js';
-import todoManager from './todoManager.js';
+import { todoFormControls, projectFormControls, domNodes } from '../dom/cached-dom.js';
+import { projectManager } from '../project/project-manager.js';
+import todoManager from '../todo/todoManager.js';
 import { getUserInput } from './user-input.js';
-import { pickProject } from './choose-project.js';
-import { displayCreatedProjects, updateDisplay } from './display-controller.js'
+import { pickProject } from '../project/choose-project.js';
+import { displayCreatedProjects, updateDisplay } from '../dom/ui.js'
 
 export const createUserProject = function(name){
     if(typeof(name) == 'string'){

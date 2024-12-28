@@ -1,7 +1,7 @@
 import { userProjects } from './project-manager.js'
-import { displayAvailableProjects, updateDisplay } from './display-controller.js'
+import { displayAvailableProjects, updateDisplay } from '../dom/ui.js'
 import { projectManager } from './project-manager.js';
-import todoManager from './todoManager.js'
+import todoManager from '../todo/todoManager.js'
 
 export function pickProject(createdTodo){
     let projectBtns = displayAvailableProjects();

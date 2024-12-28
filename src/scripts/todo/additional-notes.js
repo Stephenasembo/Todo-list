@@ -1,4 +1,4 @@
-import { todoFormControls } from './cached-dom.js'
+import { todoFormControls } from '../dom/cached-dom.js'
 
 export let userNote = null;
 

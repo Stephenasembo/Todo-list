@@ -1,12 +1,12 @@
-import { formHandling } from './form-manipulation.js';
-import todoManager from './todoManager.js';
-import { projectManager } from './project-manager.js';
-import { createUserProject } from './create-entries.js';
+import { formHandling } from './utils/form-manipulation.js';
+import todoManager from './todo/todoManager.js';
+import { projectManager } from './project/project-manager.js';
+import { createUserProject } from './utils/create-entries.js';
 import '../styles/styles.css';
-import { displayCreatedProjects } from './display-controller.js';
-import './date-constraint.js';
-import { updateDisplay } from './display-controller.js'
-import { retrieveUserProjects } from './local-storage.js';
+import { displayCreatedProjects } from './dom/ui.js';
+import './utils/date-constraint.js';
+import { updateDisplay } from './dom/ui.js'
+import { retrieveUserProjects } from './storage.js';
 
 window.localStorage;
 let createdProjectsArr = retrieveUserProjects();

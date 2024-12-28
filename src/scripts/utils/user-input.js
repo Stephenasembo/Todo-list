@@ -1,6 +1,6 @@
-import { todoFormControls, projectFormControls } from './cached-dom.js';
+import { todoFormControls, projectFormControls } from '../dom/cached-dom.js';
 import { format } from 'date-fns';
-import { userNote } from './additional-notes.js';
+import { userNote } from '../todo/additional-notes.js';
 
 let newProjectName = null;
 let newTodoObj = null;

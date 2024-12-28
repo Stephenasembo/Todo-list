@@ -1,7 +1,7 @@
-import { displayEditableContent, displayTodoDetails, updateDisplay } from "./display-controller";
+import { displayEditableContent, displayTodoDetails, updateDisplay } from "../dom/ui.js";
 import { cacheEditBtns } from "./edit-todo";
-import { retrieveUserProjects } from "./local-storage";
-import { projectManager } from "./project-manager";
+import { retrieveUserProjects } from "../storage.js";
+import { projectManager } from "../project/project-manager";
 
 export default (function(){
     function createNewTodo(obj){

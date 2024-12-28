@@ -1,6 +1,6 @@
-import { setDateMin } from "./date-constraint.js";
-import { displayInputEdit, removeDialog } from "./display-controller";
-import { projectManager } from './project-manager.js'
+import { setDateMin } from "../utils/date-constraint.js";
+import { displayInputEdit, removeDialog } from "../dom/ui.js";
+import { projectManager } from '../project/project-manager.js';
 import { format } from 'date-fns';
 
 let inputEditDialog = null;

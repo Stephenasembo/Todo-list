@@ -1,4 +1,4 @@
-import { domNodes, todoFormControls, projectFormControls } from './cached-dom';
+import { domNodes, todoFormControls, projectFormControls } from '../dom/cached-dom';
 
 export const formHandling = (function(){
     const addEventListeners = (function(){

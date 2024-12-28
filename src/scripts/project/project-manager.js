@@ -1,6 +1,6 @@
-import { displayCreatedProjects, updateDisplay } from './display-controller.js';
-import { saveUserProjects, retrieveUserProjects } from './local-storage.js'
-import todoManager from './todoManager.js'
+import { displayCreatedProjects, updateDisplay } from '../dom/ui.js';
+import { saveUserProjects, retrieveUserProjects } from '../storage.js'
+import todoManager from '../todo/todoManager.js'
 
 export let userProjects;
 if('userProjects' in localStorage){
