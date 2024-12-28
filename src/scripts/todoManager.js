@@ -1,6 +1,6 @@
 import { displayEditableContent, displayTodoDetails, updateDisplay } from "./display-controller";
 import { cacheEditBtns } from "./edit-todo";
-import { retrieveUserProjects, saveUserProjects } from "./local-storage";
+import { retrieveUserProjects } from "./local-storage";
 import { projectManager } from "./project-manager";
 
 export default (function(){

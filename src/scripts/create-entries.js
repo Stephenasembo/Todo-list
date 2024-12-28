@@ -1,9 +1,7 @@
 import { todoFormControls, projectFormControls, domNodes } from './cached-dom.js';
-import { formHandling } from './form-manipulation.js';
 import { projectManager } from './project-manager.js';
 import todoManager from './todoManager.js';
 import { getUserInput } from './user-input.js';
-import { defaultProject } from './index.js';
 import { pickProject } from './choose-project.js';
 import { displayCreatedProjects, updateDisplay } from './display-controller.js'
 
