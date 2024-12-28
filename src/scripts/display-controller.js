@@ -1,7 +1,7 @@
 import { displayNodes } from './cached-dom';
 import { userProjects } from './project-manager.js'
 import { priorityColor } from './todo-color.js';
-import './task-styles.css'
+import '../styles/task-styles.css'
 
 export function updateDisplay(){
     displayNodes.projectsDiv.innerHTML = '';
