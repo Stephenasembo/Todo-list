@@ -1,3 +1,4 @@
+import { formHandling } from './form-manipulation.js';
 import todoManager from './todoManager.js';
 import { projectManager } from './project-manager.js';
 import { createUserProject } from './create-entries.js';
